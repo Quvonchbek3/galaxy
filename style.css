@@ -311,7 +311,7 @@ body {
 
 
 .zoom-large.view-2D .scale-d #solar-system {
-  width: 22%;
+  width: 100%;
 }
 
 
@@ -610,15 +610,15 @@ body {
 /*-------------------scale orbits and distance scales orbits----------------*/
 
 .scale-d #mercury.orbit {
-  width: 44.7418em;
-  height: 44.7418em;
+  width: 44.74176em;
+  height: 44.74176em;
   margin-top: -22.37088em;
   margin-left: -22.37088em;
 }
 
 .scale-d #venus.orbit {
-  width: 47.35737em;
-  height: 47.35737em;
+  width: 47.55737em;
+  height: 47.55737em;
   margin-top: -23.67869em;
   margin-left: -23.67869em;
 }
@@ -1561,7 +1561,96 @@ z-index: 99;
 
 .zoom-large #controls label.set-zoom::before{
   content: "+";
-  margin-left: 32px;
+  margin-left: 7px;
+  top: 3px;
+}
+
+.zoom-close #controls label.set-zoom::before{
+  content: "-";
+  margin-left: 80px;
+}
+
+.zoom-large #controls .set-zoom input::after{
+  margin-left: 81px;
+}
+
+/*------------------transition---------------------*/
+
+.pos{
+  transition-property: top left;
+}
+
+#solar-system,
+.orbit,
+.planet,
+.satelite,.ring{
+  transition-property: width, height, top, left, margin-left, margin-top, webkit,-transform;
+}
+
+#sun, .icon{
+transition-property: width, height, webkit-transform;
+}
+
+#solar-system,
+#sun,
+.orbit,
+.planet,
+.satelite,
+.ring,
+.infos,
+.icon{
+  transition-duration: 0.8s;
+  transition-timing-function: ease-in-out;
+}
+
+#solar-system,
+#sun,
+.planet,
+.satelite,
+.ring{
+  transition-delay: 0s;
+}
+
+.pos{
+  transition-delay: 1s;
+}
+
+.opening #solar-system,
+.opening #sun,
+.opening .orbit,
+.opening .pos,
+.opening .planet,
+.opening .satelite,
+.opening .ring,
+.opening .infos,
+.opening h1,
+.opening #data,
+.opening dl.infos,
+.opening #controls{
+  transition-duration: 0s;
+  transition-delay: 0s;
+}
+
+.opening .pos {
+  transition-delay: 0s;
+}
+
+h1, #data, #controls{
+  transition-property: opacity, margin;
+  transition-duration: 0.8s;
+  transition-timing-function: ease-in-out;
+}
+
+h1{
+  transition-delay: 0.35s;
+}
+
+#data{
+  transition-delay: 0.7s;
+}
+
+#controls{
+  transition-delay: 1s;
 }
 
 /* --------------images-------------*/
